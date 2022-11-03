@@ -1,0 +1,52 @@
+/*
+ Copyright 2022 by Michel JANTON (michel.janton@gmail.com)
+
+ This file is part of "Easy Budget" software
+ "Easy Budget" is free software: you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version. "Easy Budget" is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details. You should have received a copy of the GNU General Public License
+ along with "Easy Budget". If not, see <https://www.gnu.org/licenses/>.
+*/
+
+#ifndef EDITOPDELEGATE_H
+#define EDITOPDELEGATE_H
+
+#include <QStyledItemDelegate>
+#include <QStringList>
+
+class BudgetItem;
+
+class EditOpDelegate : public QStyledItemDelegate
+{
+    Q_OBJECT
+public:
+    explicit EditOpDelegate(QObject* parent = 0);
+    void SetItemList(const QList<BudgetItem*>& list);
+    QWidget* createEditor(QWidget* parent,
+                          const QStyleOptionViewItem& option,
+                          const QModelIndex& index) const;
+    void setEditorData(QWidget* editor, const QModelIndex& index) const;
+    void setModelData(QWidget* editor,
+                      QAbstractItemModel* model,
+                      const QModelIndex& index) const;
+    bool editorEvent(QEvent* event,
+                     QAbstractItemModel* model,
+                     const QStyleOptionViewItem& option,
+                     const QModelIndex& index);
+    //	void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem
+    //&option, 							  const QModelIndex &index) const;
+    void paint(QPainter* painter,
+               const QStyleOptionViewItem& option,
+               const QModelIndex& index) const;
+signals:
+    void modelDataEdited(const QModelIndex& index);
+
+private:
+    QList<BudgetItem*> m_ListItems;
+};
+
+#endif // EDITOPDELEGATE_H
