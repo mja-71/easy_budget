@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>bourse.jpg</file>
+        <file>bourse.png</file>
+    </qresource>
+    <qresource prefix="/ico">
+        <file>png/apps_bookmark_bar_icon.png</file>
+        <file>png/document-open.png</file>
+        <file>png/dateedit-32.png</file>
+        <file>png/parentdir-16.png</file>
+        <file>png/folder_new.png</file>
+        <file>png/rotateright.png</file>
+        <file>png/addtab.png</file>
+        <file>png/standardbutton-delete-16.png</file>
+        <file>png/refresh-32.png</file>
+        <file>png/fileopen.png</file>
+        <file>png/key.png</file>
+        <file>png/help-browser.png</file>
+    </qresource>
+</RCC>

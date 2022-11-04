@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>484</width>
+    <height>259</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Easy Budget</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="m_pContainer">
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>484</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuRELEVE">
+    <property name="title">
+     <string>RELEVE</string>
+    </property>
+    <addaction name="actionDisplayReleve"/>
+    <addaction name="actionIMPORT"/>
+    <addaction name="actionUPDATE_ITEM"/>
+   </widget>
+   <widget class="QMenu" name="menuDATABASE">
+    <property name="title">
+     <string>DATABASE</string>
+    </property>
+    <addaction name="actionOPEN"/>
+   </widget>
+   <widget class="QMenu" name="menuSYNTHESE">
+    <property name="title">
+     <string>SYNTHESE</string>
+    </property>
+    <addaction name="actionDisplaySynthese"/>
+    <addaction name="actionEXPORT"/>
+   </widget>
+   <widget class="QMenu" name="menuITEMS">
+    <property name="title">
+     <string>ITEMS</string>
+    </property>
+    <addaction name="actionDisplayItems"/>
+   </widget>
+   <widget class="QMenu" name="menuHELP">
+    <property name="title">
+     <string>HELP</string>
+    </property>
+   </widget>
+   <addaction name="menuDATABASE"/>
+   <addaction name="menuRELEVE"/>
+   <addaction name="menuSYNTHESE"/>
+   <addaction name="menuITEMS"/>
+   <addaction name="menuHELP"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionDisplayReleve"/>
+   <addaction name="actionDisplaySynthese"/>
+   <addaction name="actionDisplayItems"/>
+   <addaction name="actionHELP"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionIMPORT">
+   <property name="text">
+    <string>IMPORT</string>
+   </property>
+  </action>
+  <action name="actionOPEN">
+   <property name="text">
+    <string>OPEN</string>
+   </property>
+  </action>
+  <action name="actionDisplayReleve">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/ico/png/document-open.png</normaloff>:/ico/png/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>STATE</string>
+   </property>
+   <property name="toolTip">
+    <string>Display statement</string>
+   </property>
+  </action>
+  <action name="actionDisplaySynthese">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/ico/png/dateedit-32.png</normaloff>:/ico/png/dateedit-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>SYNTHESIS</string>
+   </property>
+   <property name="toolTip">
+    <string>Display synthesis</string>
+   </property>
+  </action>
+  <action name="actionEXPORT">
+   <property name="text">
+    <string>EXPORT</string>
+   </property>
+  </action>
+  <action name="actionUPDATE_ITEM">
+   <property name="text">
+    <string>UPDATE ITEM</string>
+   </property>
+  </action>
+  <action name="actionDisplayItems">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/ico/png/apps_bookmark_bar_icon.png</normaloff>:/ico/png/apps_bookmark_bar_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>ITEMS</string>
+   </property>
+   <property name="toolTip">
+    <string>Display items</string>
+   </property>
+  </action>
+  <action name="actionDisplayMerge">
+   <property name="text">
+    <string>MERGE</string>
+   </property>
+  </action>
+  <action name="actionHELP">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/ico/png/help-browser.png</normaloff>:/ico/png/help-browser.png</iconset>
+   </property>
+   <property name="text">
+    <string>HELP</string>
+   </property>
+   <property name="toolTip">
+    <string>Display help browser</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,36 @@
+/*
+ Copyright 2022 by Michel JANTON (michel.janton@gmail.com)
+
+ This file is part of "Easy Budget" software
+ "Easy Budget" is free software: you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free Software
+ Foundation, either version 3 of the License, or (at your option) any later
+ version. "Easy Budget" is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details. You should have received a copy of the GNU General Public License
+ along with "Easy Budget". If not, see <https://www.gnu.org/licenses/>.
+*/
+
+#include "mainwindow.h"
+#include <QApplication>
+#include <QTranslator>
+
+int main(int argc, char* argv[])
+{
+    QApplication a(argc, argv);
+    a.setWindowIcon(QIcon(":/images/bourse.png"));
+
+    // translation
+    QString locale = QLocale::system().name();
+    QTranslator translator;
+    translator.load(QString("account_") + locale);
+    // translator.load(QString("account_de"));
+    a.installTranslator(&translator);
+
+    // display main window
+    MainWindow w;
+    w.show();
+    // w.setWindowState(Qt::WindowMaximized);
+    return a.exec();
+}
