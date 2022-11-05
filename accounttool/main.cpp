@@ -22,11 +22,15 @@ int main(int argc, char* argv[])
     a.setWindowIcon(QIcon(":/images/bourse.png"));
 
     // translation
-    QString locale = QLocale::system().name();
     QTranslator translator;
-    translator.load(QString("account_") + locale);
-    // translator.load(QString("account_de"));
-    a.installTranslator(&translator);
+    if (!translator.load(QLocale::system(), "account", "_", ":/i18n", ".qm"))
+    {
+        qDebug("No translation file found");
+    }
+    else
+    {
+        a.installTranslator(&translator);
+    }
 
     // display main window
     MainWindow w;

@@ -16,6 +16,7 @@ set(CMAKE_BUILD_RPATH "$ORIGIN")
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS LinguistTools REQUIRED)
 
 set(PROJECT_SOURCES
     main.cpp
@@ -66,8 +67,18 @@ set(PROJECT_UI
     resource.qrc
 )
 
+set(TS_FILES i18n/account_fr.ts)
 
 add_executable(AccountTool WIN32 ${PROJECT_SOURCES} ${PROJECT_UI})
 target_link_libraries(AccountTool PRIVATE Qt${QT_VERSION_MAJOR}::Widgets AccountToolData)
 
+qt_add_lupdate(AccountTool TS_FILES i18n/account_fr.ts)
+qt_add_lrelease(AccountTool  TS_FILES i18n/account_fr.ts
+                QM_FILES_OUTPUT_VARIABLE qm_files)
+qt_add_resources(AccountTool "translations"
+     PREFIX "/i18n"
+     BASE "${CMAKE_CURRENT_BINARY_DIR}"
+     FILES "${qm_files}")
+# qt6_add_translations(AccountTool TS_FILES i18n/account_fr.ts)
 
+add_dependencies(AccountTool AccountTool_lupdate)
