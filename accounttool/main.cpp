@@ -15,18 +15,33 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QTranslator>
+#include <QList>
 
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     a.setWindowIcon(QIcon(":/images/bourse.png"));
 
-    // translation
-    QString locale = QLocale::system().name();
-    QTranslator translator;
-    translator.load(QString("account_") + locale);
-    // translator.load(QString("account_de"));
-    a.installTranslator(&translator);
+    // translations
+    QStringList modules;
+    modules << "accountdata"
+            << "account";
+    // QList<QTranslator> translators(modules.size());
+    QTranslator translators[2];
+    QTranslator* ptr_tr = translators;
+    foreach (QString m, modules)
+    {
+        if (!ptr_tr->load(QLocale::system(), m, "_", ":/i18n", ".qm"))
+        {
+            qDebug("No translation file found for %s",
+                   m.toLatin1().constData());
+        }
+        else
+        {
+            a.installTranslator(ptr_tr);
+        }
+        ptr_tr++;
+    }
 
     // display main window
     MainWindow w;
