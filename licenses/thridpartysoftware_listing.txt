@@ -1,0 +1,9 @@
+"Easy Budget" contains the following components: 
+
+-----------------------------
+Qt framework 6.2.4
+------------------------------
+
+Qt framework and tools are licensed under GPL V3
+see https://www.qt.io/licensing 
+
