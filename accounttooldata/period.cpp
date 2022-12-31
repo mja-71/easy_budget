@@ -44,10 +44,13 @@ Statement* Period::GetStatement(const QString& str_id)
 {
     Statement* st = 0;
     QMap<QString, Statement*>::iterator it = m_MapStat.find(str_id);
+    QLocale def_loc;
     if (it == m_MapStat.end())
     {
         int mm = str_id.mid(5, 2).toInt();
-        st = new Statement(str_id, QDate(2021, mm, 1).toString("MMMM"));
+        // st = new Statement(str_id, QDate(2021, mm, 1).toString("MMMM"));
+        st =
+            new Statement(str_id, def_loc.toString(QDate(2021, mm, 1), "MMMM"));
         m_MapStat.insert(str_id, st);
     }
     else

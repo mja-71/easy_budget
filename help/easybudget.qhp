@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QtHelpProject version="1.0">
+    <virtualFolder>easybudget</virtualFolder>
+    <namespace>easybudget.org.1-0-0.premium</namespace>
+    <filterSection>
+		<toc>
+                  <section title="Easy Budget" ref="help-gen.html">
+                        <section title="VUE RELEVES" ref="help-vue-releves.html">
+			</section>
+                        <section title="VUE CATEGORIES" ref="help-vue-categories.html">
+                        </section>
+                        <section title="VUE SYNTHESE" ref="help-vue-synthese.html">
+                        </section>
+		  </section>
+		</toc>
+        <keywords>
+            <keyword name="easy budgdet" id="easy" ref="help-gen.html"/>
+        </keywords>
+        <files>
+            <file>style/offline.css</file>
+            <file>style/offline-simple.css</file>
+            <file>help-gen.html</file>
+            <file>help-vue-releves.html</file>
+            <file>help-vue-categories.html</file>
+            <file>help-vue-synthese.html</file>
+            <file>help-import-releve.html</file>
+            <file>images/vue-releves.png</file>
+            <file>images/vue-categorie.png</file>
+            <file>images/vue-synthese.png</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

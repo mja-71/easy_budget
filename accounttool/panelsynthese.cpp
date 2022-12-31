@@ -108,9 +108,11 @@ void PanelSynthese::InitColumns()
     ui->m_pTableInput->setColumnCount(14);
     ui->m_pTableOutput->setColumnCount(14);
     list_titles << "";
+    QLocale def_loc;
     for (int i = 1; i <= 12; i++)
     {
-        list_titles << QDate(2021, i, 1).toString("MMM"); // short month name
+        list_titles << def_loc.toString(QDate(2021, i, 1),
+                                        "MMM"); // short month name
         ui->m_pTableInput->setColumnWidth(i, 80);
         ui->m_pTableOutput->setColumnWidth(i, 80);
     }

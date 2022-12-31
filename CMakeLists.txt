@@ -21,7 +21,8 @@ endif()
 
 add_subdirectory(accounttooldata)
 add_subdirectory(accounttool)
-# add_subdirectory(help)
+add_subdirectory(help)
 
 include(setup/install.cmake)
 include(setup/install-qt.cmake)
+include(setup/install-help.cmake)

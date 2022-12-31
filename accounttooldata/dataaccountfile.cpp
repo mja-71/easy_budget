@@ -204,7 +204,7 @@ int DataAccountFile::AddOps(const QList<Operation*>& ops,
             list_stats.push_back(st);
         }
         // add op in statement
-        if (Find((*it)->Id(), *list_ops) == 0)
+        if ((list_ops != nullptr) && (Find((*it)->Id(), *list_ops) == 0))
         {
             list_ops->push_back((*it));
             nb_ops++;

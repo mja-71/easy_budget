@@ -79,7 +79,6 @@ qt_add_lrelease(AccountTool  TS_FILES i18n/account_fr.ts
                 QM_FILES_OUTPUT_VARIABLE qm_files )
 get_property(data_qm_files TARGET AccountToolData PROPERTY QM_FILES)
 get_property(data_bin_dir TARGET AccountToolData PROPERTY BINARY_DIR)
-message("qm files 2 = ${qm_files}")
 qt_add_resources(AccountTool "translations"
      PREFIX "/i18n"
      BASE ${CMAKE_CURRENT_BINARY_DIR}
@@ -88,4 +87,8 @@ qt_add_resources(AccountTool "translations_data"
      PREFIX "/i18n"
      BASE ${data_bin_dir}
      FILES ${data_qm_files})
+ qt_add_resources(AccountTool "translations_qt"
+      PREFIX "/i18n"
+      BASE "${Qt6_DIR}/../../../translations"
+      FILES ${Qt6_DIR}/../../../translations/qtbase_fr.qm)
 add_dependencies(AccountTool AccountTool_lupdate)

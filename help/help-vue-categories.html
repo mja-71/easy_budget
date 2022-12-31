@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Easy Budget : Vue des Catégories</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+   <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+		<td ><a href="help-gen-2.html">Guide d'utilisation Easy Budget</a></td>
+		<td >Vue des Catégories</td>
+		</tr></table>
+		<table class="buildversion"><tr><td id="buildversion" width="100%" align="right">Easy Budget 1.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contenus</a></h3>
+<ul>
+<li class="level1"><a href="#create">Ajout d'une catégorie</a></li>
+<li class="level1"><a href="#type">Choix du type d'opération</a></li>
+<li class="level1"><a href="#expressions">Définir les mots clés</a></li>
+</ul>
+</div>
+<h1 class="title">Vue des Catégories</h1>
+<p class="centerAlign"><img src="images/vue-categorie.png" alt="" /></p>
+<p> La zone de gauche contient la liste des catégories</p>
+<p> La zone centrale contient les paramètres de la catégorie sélectionnée dans la liste.</p>
+
+<h2 id="create">Ajout d'une catégorie</h2>
+<p>Cliquer sur le bouton "Ajouter" : une nouvelle catégorie est alors ajoutée à la liste</p>
+<p>Saisir dans la zone centrale :</p>
+<ul>
+<li>Le titre de la catégorie : ce libellé apparaitra dans <b>la vue des relevés</b> (colonne "cat.") et dans <b>la vue synthèse</b></li>
+<li>Le type d'opérations associé à l'opération</li>
+<li>La liste des mots clés contenues dans le libellé des opérations à regrouper</li>
+</ul>
+<p> Pour supprimer une catégorie, la sélectionner et cliquer sur le bouton "Supprimer".
+
+<h2 id="type">Choix du type d'opération</h2>
+<div class="table"><table class="generic">
+<thead><tr class="qt-style"><th >Type</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd" ><td >Crédit ou débit</td>	<td >
+<p>La catégorie s'applique aux dépenses ou aux entrées</p>
+<p>Dans la vue synthèse, la catégorie apparaitra dans le tableau des dépenses (sommes négatives) 
+et dans le tableau de sortie (sommes positives). <p>
+</td></tr>
+<tr valign="top" class="even"><td >Crédit</td>	<td >La catégorie ne s'applique qu'aux entrées (somme positive)</td></tr>
+<tr valign="top" class="odd" ><td >Débit</td>	<td >La catégorie ne s'applique qu'aux dépenses (somme négative)</td></tr>
+</table>
+</div>
+
+<h2 id="expressions">Définir les mots clés</h2>
+<p>L'association se fait en recherchant une expression dans  le libellé de l'opération.</p>
+<p>Une catégorie peut contenir plusieurs expressions.</p>
+<p>Une opération est alors associée à la catégorie, lorsque son libéllé contient au moins une de ces expressions.</p>
+<p>Pour ajouter une expression, il suffit de cliquer sur "saisir expression"</p>
+<p>Pour modifier ou supprimer une expression, cliquer sur l'expression pour passer en mode édition</p>
+
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 Michel Janton
+   <br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br> </p>
+</div>
+</body>
+</html>

@@ -98,7 +98,7 @@ bool StateFileOfx::Load(const QString& file_path)
     return true;
 }
 
-/// Set opre with string.
+/// Set op with string.
 Operation* StateFileOfx::CreateOp(QTextStream& in)
 {
     Operation* op = 0;
@@ -114,7 +114,14 @@ Operation* StateFileOfx::CreateOp(QTextStream& in)
         Extract(line, tag, text);
         if (tag == "TRNAMT")
         {
-            val = def_loc.toFloat(text);
+            if (text.contains('.'))
+            {
+                val = text.toFloat();
+            }
+            else
+            {
+                val = def_loc.toFloat(text);
+            }
         }
         else if (tag == "FITID")
         {

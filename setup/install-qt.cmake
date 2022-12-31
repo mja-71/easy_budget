@@ -68,11 +68,6 @@ else()
         DESTINATION bin
         FILES_MATCHING PATTERN "*.so*"
     )
-    # qt sql drivers
-    install (DIRECTORY "${Qt6_DIR}/../../../plugins/sqldrivers"
-        DESTINATION bin
-        FILES_MATCHING PATTERN "*.so*"
-    )
     # extra library
     install (DIRECTORY "${Qt6_DIR}/../../"
         DESTINATION lib
@@ -90,10 +85,6 @@ else()
         DESTINATION lib
         FILES_MATCHING PATTERN "libQt6XcbQpa.so.*"
     )
-    # assistant
-    install(FILES "${Qt6_DIR}/../../../bin/assistant"
-        DESTINATION bin
-        COMPONENT "LIB_QT"
-    )
+
 endif()
 

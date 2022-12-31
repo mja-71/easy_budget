@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Easy Budget : Vue Relevés</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+   <script type="text/javascript">
+    window.onload = function(){document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");};
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+		<td ><a href="help-gen.html">Guide Utilisateur Easy Budget</a></td>
+		<td >Vue des Relevés</td>
+		</tr></table>
+		<table class="buildversion"><tr><td id="buildversion" width="100%" align="right">Easy Budget 1.0</td>
+        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contenu</a></h3>
+<ul>
+<li class="level1"><a href="#selection">Sélection d'un relevé</a></li>
+<li class="level1"><a href="#table">Affichage des opérations</a></li>
+<li class="level1"><a href="#positions">Position du compte</a></li>
+<li class="level1"><a href="#fonctions">Actions sur le relevé</a></li>
+</ul>
+</div>
+<h1 class="title">Vue Relevés</h1>
+<p class="centerAlign"><img src="images/vue-releves.png" alt="" /></p>
+
+<h2 id="selection">Sélection d'un relevé</h2>
+<p>La section de droite permet de choisir le relevé à afficher :</p>
+<ul>
+<li class="level1">Sélectionner l'année</li>
+<li class="level1">cliquer sur le mois</li>
+</ul>
+<br>Les relevés de l'année courante sont automatiquement créés.
+<br>Les relevés d'une autre année sont ajoutés dès qu'une opération de cette année est créée.
+
+<h2 id="table">Affichage des opérations</h2>
+<div class="table"><table class="generic">
+<thead><tr class="qt-style"><th >Colonne</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd" ><td >Status</td>	<td > 
+    <li>Importé: l'opération a été importée d'un relevé bancaire</li>
+    <li>manuel : l'opération a été ajoutée par la bouton « Ajouter »</li>
+	<li>vérifié: l'opération passe à l'état « vérifiée » en cochant la case de cette colonne. </li>
+</td></tr>
+<tr valign="top" class="even"><td >Date</td>	<td >date de l'opération</td></tr>
+<tr valign="top" class="odd" ><td >Libellé</td>	<td >titre de l'opération   </td></tr>
+<tr valign="top" class="even"><td >Valeur</td><td >valeur de l'opération.
+			<ul>
+             <li>Positive pour une entrée</li>
+			 <li>Négative pour une sortie</li>
+			</ul>
+</td></tr>
+<tr valign="top" class="odd" ><td >Cat.</td><td >Catégorie de l'opération 
+             <br>La catégorie peut être sélectionnée en cliquant sur la cellule : une liste déroulante des catégories est alors accessible.</br>
+</td></tr>
+<tr valign="top" class="even"><td >Commentaire</td><td >texte libre pouvant être ajouté à l'opération</td></tr>
+</table>
+</div>
+
+<h2 id="positions">Position du compte</h2>
+<p> Au dessus du tableau des opérations, sont affichées les informations de position </p>
+<div class="table"><table class="generic">
+<thead><tr class="qt-style"><th >Zone</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd" ><td >Crédit</td>	<td >Total des entrées durant le mois</td></tr>
+<tr valign="top" class="even"><td >Débit</td>	<td >Total des dépenses durant le mois</td></tr>
+<tr valign="top" class="odd" ><td >Position</td>	<td >position du compte = (crébit – débit) + position du mois précédent</td></tr>
+<tr valign="top" class="even"><td >Dernière position</td><td >dernière position connue indiquée par la banque
+                              <br> le champ à droite indique la différence entre la position et la dernière position connue.</br>
+</td></tr>
+</table>
+
+<h2 id="fonctions">Fonctions accessibles</h2>
+<p>En bas de la vue sont situées les boutons qui permettent de gérer les relevés : </p>
+<div class="table"><table class="generic">
+<thead><tr class="qt-style"><th >Bouton</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd" ><td >IMPORTER</td>	<td >Permet de sélectionner un fichier contenant les opérations</td></tr>
+<tr valign="top" class="even"><td >CLOTURER</td>	<td >Ferme l'année comptable : ceci permet de figer les regroupement par catégorie.
+                                 <br>Il n'est alors plus possible de modifier les relevés de l'année cloturée.</br> </td></tr>
+<tr valign="top" class="odd" ><td >AJOUTER</td>	<td >Crée une nouvelle opération</td></tr>
+<tr valign="top" class="even"><td >SUPPRIMER</td><td >Supprime l'opération sélectionnée dans le tableau</td></tr>
+<tr valign="top" class="odd"><td >AFFECTER...</td><td >Mets à jour l'association automatique entre les opérations et les catégories.</td></tr>
+<tr valign="top" class="even"><td >FUSIONNER</td><td >Compare les opérations importées de la banque avec les opérations saisies, non encore vérifiées</td></tr>
+</table>
+</div>
+
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 Michel Janton
+   <br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br> </p>
+</div>
+</body>
+</html>
