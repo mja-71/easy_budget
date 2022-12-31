@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QHelpCollectionProject version="1.0">
+    <assistant>
+          <title>Aide Easy Budget</title>
+          <cacheDirectory>jihm-software/easybudget</cacheDirectory>
+          <applicationIcon>help.ico</applicationIcon>
+    </assistant>
+    <docFiles>
+        <generate>
+            <file>
+                  <input>easybudget.qhp</input>
+                  <output>easybudget.qch</output>
+            </file>
+        </generate>
+            <register>
+                <file>easybudget.qch</file>
+            </register>
+    </docFiles>
+</QHelpCollectionProject>

@@ -275,7 +275,7 @@ void PanelState::showEvent(QShowEvent* event)
 
 //------------------------- Protected Slots -----------------------------------
 
-/// Called after year selecting : update releve list.
+/// Called after year selecting : update state list.
 void PanelState::on_m_pCbxYears_currentTextChanged(const QString& year)
 {
     QDate today = QDate::currentDate();
@@ -362,7 +362,7 @@ void PanelState::on_btnImport_clicked()
         this,
         tr("Select one or more files to import"),
         folder_import,
-        tr("CSV files (*.csv *.txt);;OFX files (*.ofx)"));
+        tr("OFX files (*.ofx);;CSV files (*.csv *.txt)"));
     bool res;
     AccountMgr::ImportReport report;
     foreach (QString path, files)

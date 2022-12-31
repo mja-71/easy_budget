@@ -25,9 +25,10 @@ int main(int argc, char* argv[])
     // translations
     QStringList modules;
     modules << "accountdata"
-            << "account";
+            << "account"
+            << "qtbase";
     // QList<QTranslator> translators(modules.size());
-    QTranslator translators[2];
+    QTranslator translators[4];
     QTranslator* ptr_tr = translators;
     foreach (QString m, modules)
     {
