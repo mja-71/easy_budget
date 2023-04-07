@@ -53,7 +53,8 @@ bool BudgetItem::Include(const QString& op_name) const
     QStringList::const_iterator it;
     for (it = m_ListOp.constBegin(); it != m_ListOp.constEnd(); ++it)
     {
-        if (op_name.contains(*it))
+        // if (op_name.contains(*it)) --> fixe
+        if (op_name.compare(*it) == 0)
         {
             return true;
         }
