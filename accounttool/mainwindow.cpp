@@ -150,7 +150,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
 void MainWindow::on_actionHELP_triggered()
 {
-    QString cmd = QCoreApplication::applicationDirPath() + "/assistant";
+    QString cmd = "assistant";
     QStringList arguments;
     arguments << "-collectionFile"
               << "help/easybudget.qhc";

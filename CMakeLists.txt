@@ -23,6 +23,13 @@ add_subdirectory(accounttooldata)
 add_subdirectory(accounttool)
 add_subdirectory(help)
 
+
 include(setup/install.cmake)
-include(setup/install-qt.cmake)
+
+if(MSVC)
+    include(setup/install-qt.cmake)
+endif()
+
 include(setup/install-help.cmake)
+include(CPack)
+

@@ -87,8 +87,16 @@ qt_add_resources(AccountTool "translations_data"
      PREFIX "/i18n"
      BASE ${data_bin_dir}
      FILES ${data_qm_files})
- qt_add_resources(AccountTool "translations_qt"
-      PREFIX "/i18n"
-      BASE "${Qt6_DIR}/../../../translations"
-      FILES ${Qt6_DIR}/../../../translations/qtbase_fr.qm)
+if(CMAKE_HOST_UNIX)
+    qt_add_resources(AccountTool "translations_qt"
+        PREFIX "/i18n"
+        BASE "/usr/share/qt6/translations"
+        FILES /usr/share/qt6//translations/qtbase_fr.qm)
+ else()
+    qt_add_resources(AccountTool "translations_qt"
+        PREFIX "/i18n"
+        BASE "${Qt6_DIR}/../../../translations"
+        FILES ${Qt6_DIR}/../../../translations/qtbase_fr.qm)
+endif()
 add_dependencies(AccountTool AccountTool_lupdate)
+

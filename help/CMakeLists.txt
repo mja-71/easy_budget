@@ -20,12 +20,24 @@ add_custom_target(AccountToolHelp ALL
       easybudget.qch
 )
 
-add_custom_command(OUTPUT
+if(CMAKE_HOST_UNIX)
+    message("detected unix")
+    add_custom_command(OUTPUT
+                      ${CMAKE_CURRENT_SOURCE_DIR}/easybudget.qch
+                   DEPENDS
+                      ${SRC_HELP_FILES}
+                   COMMAND
+                      /usr/lib/qt6/bin/qhelpgenerator ${CMAKE_CURRENT_SOURCE_DIR}/easybudget.qhcp
+                   COMMENT "Generate HELP"
+   )
+else()
+   add_custom_command(OUTPUT
                       ${CMAKE_CURRENT_SOURCE_DIR}/easybudget.qch
                    DEPENDS
                       ${SRC_HELP_FILES}
                    COMMAND
                       ${Qt6_DIR}/../../../bin/qhelpgenerator ${CMAKE_CURRENT_SOURCE_DIR}/easybudget.qhcp
                    COMMENT "Generate HELP"
-)
+   )
+endif()
 
