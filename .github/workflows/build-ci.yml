@@ -25,14 +25,12 @@ jobs:
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Unix Makefiles" 
+      run: cmake -B ${{env.BUILD_DIR}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "Unix Makefiles" 
 
     - name: Build
       # Build your program with the given configuration
       run: |
-         pwd
-         ls ${{github.workspace}}
-         cmake --build ${{github.workspace}}/${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}} -- -j 8
+         cmake --build ${{env.BUILD_DIR}} --config ${{env.BUILD_TYPE}} -- -j 8
 
     #- name: Test
     #  working-directory: ${{github.workspace}}/build
@@ -42,8 +40,6 @@ jobs:
     
     - name: Packaging 
       run: |
-         pwd
-         ls ${{github.workspace}}
-         cd ${{github.workspace}}/${{env.BUILD_DIR}}
-         cpack --config "${{github.workspace}}/setup/cpack_config.cmake" -D CPACK_PROJECT_CONFIG_FILE="${{github.workspace}}/setup/cpack_generator.cmake" -G DEB ${{github.workspace}}/build
+         cd ${{env.BUILD_DIR}}
+         cpack --config "../setup/cpack_config.cmake" -D CPACK_PROJECT_CONFIG_FILE="../setup/cpack_generator.cmake" -G DEB .
 
