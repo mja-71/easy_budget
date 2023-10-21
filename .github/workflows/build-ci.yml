@@ -38,6 +38,7 @@ jobs:
     #  run: ctest -C ${{env.BUILD_TYPE}}
     
     - name: Packaging 
-      run: cd ${{env.BUILD_DIR}}
-      run: cpack --config "${{github.workspace}}/setup/cpack_config.cmake" -D CPACK_PROJECT_CONFIG_FILE="${{github.workspace}}/setup/cpack_generator.cmake" -G DEB ${{github.workspace}}/build
+      run: |
+         cd ${{env.BUILD_DIR}}
+         cpack --config "${{github.workspace}}/setup/cpack_config.cmake" -D CPACK_PROJECT_CONFIG_FILE="${{github.workspace}}/setup/cpack_generator.cmake" -G DEB ${{github.workspace}}/build
 
