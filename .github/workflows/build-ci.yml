@@ -43,3 +43,9 @@ jobs:
          cd ${{env.BUILD_DIR}}
          cpack --config "../setup/cpack_config.cmake" -D CPACK_PROJECT_CONFIG_FILE="../setup/cpack_generator.cmake" -G DEB .
 
+    - name: Upload artefact
+      uses: actions/upload-artifact@v3
+      with:
+        name: EasyBudget_1.0.deb 
+        path: EasyBudget_1.0.deb
+    
