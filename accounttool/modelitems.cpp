@@ -173,7 +173,7 @@ bool ModelItems::removeRows(int row,
                             const QModelIndex& parent /*= QModelIndex()*/
 )
 {
-    beginRemoveRows(parent, row, row + count);
+    beginRemoveRows(parent, row, row + count - 1);
     BudgetItem* bi;
     for (int i = 0; i < count; i++)
     {
