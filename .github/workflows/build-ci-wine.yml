@@ -1,0 +1,35 @@
+name: Build Easy-budget for Windows
+
+on:  push
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+  BUILD_DIR:  build_wine
+
+jobs:
+  build:
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/mja-71/wine_qt_dev:0.1
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build
+      # Build your program with the given configuration
+      run: |
+        .\scripts\build_wine.bat
+      
+    - name: Upload artefact
+      uses: actions/upload-artifact@v3
+      with:
+        name: EasyBudget_1.0-win64.exe 
+        path: ${{env.BUILD_DIR}}/EasyBudget_1.0-win64.exe
+    
