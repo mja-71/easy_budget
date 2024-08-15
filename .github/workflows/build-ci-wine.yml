@@ -27,7 +27,9 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: |
-        ./scripts/build_wine.bat
+        dir
+        cd scripts
+        ./build_wine.bat
       
     - name: Upload artefact
       uses: actions/upload-artifact@v3
