@@ -3,7 +3,7 @@ name: Build Easy-budget for Windows
 on:  
   push:
     branches: ['release/**']
-  workflow_dispatch
+  workflow_dispatch:
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
