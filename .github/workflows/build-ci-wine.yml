@@ -28,7 +28,7 @@ jobs:
       # Build your program with the given configuration
       run: |
         mkdir win_build
-        su - wine -c "wine64  CMD /__w/easy_budget/easy_budget/scripts/build_wine.bat"
+        su - wine -c "wine64  /__w/easy_budget/easy_budget/scripts/build_wine.bat"
         cp /home/wine/EasyBudget_1.0-win64.exe win_build/
       
     - name: Upload artefact
