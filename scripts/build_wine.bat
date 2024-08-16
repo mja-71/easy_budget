@@ -18,8 +18,10 @@ set path=%TOOLS_PATH%\CMake\3.23.2\bin;%TOOLS_PATH%\NSIS;%TOOLS_PATH%\Ninja\1.10
 rem BUILDING Easy Budget
 echo "Building Easy Budget" (%date% %time%)
 echo path is  %mypath%
-set build_path=%mypath%\..\win_build
 set src_path=%mypath%\..
+
+rem build in current path for write permission
+set build_path=win_build
 if not exist %build_path% mkdir %build_path% 
 
 cd  %build_path%
