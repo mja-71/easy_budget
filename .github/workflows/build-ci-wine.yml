@@ -27,7 +27,7 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: |
-        win64 cmd
+        su - wine -c wine64 scripts/build_wine.bat
       # cd scripts
       # ./build_wine.bat
       
