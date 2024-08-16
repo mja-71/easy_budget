@@ -29,7 +29,7 @@ jobs:
       run: |
         mkdir win_build
         su - wine -c "wine64  /__w/easy_budget/easy_budget/scripts/build_wine.bat"
-        cp /home/wine/EasyBudget_1.0-win64.exe win_build/
+        cp /home/wine/win_build/EasyBudget_1.0-win64.exe win_build/
       
     - name: Upload artefact
       uses: actions/upload-artifact@v3
